@@ -131,10 +131,14 @@ img {
     display: flex;
     align-items: baseline;
 
+    font-weight: 500;
+        font-size: 14px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
     font-size: 14px;
     line-height: 1.1;
     letter-spacing: 0.02em;
-    color: var(--title-text-color);
+    color:var(--title-text-color);
 }
 
 .item-li:not(:last-child) {
@@ -144,23 +148,31 @@ img {
 .title-nav-text {
     display: block;
     color: var(--title-text-color);
-font-weight: 500;
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
 transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), text-shadow ;
 }
-    /*transition-property: color, text-shadow;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}*/
-
-.title-nav-text:hover
+.item-li{
+    position: relative;
+}
+.title-nav-text:hover,
 .title-nav-text:focus{
     color: var(--color-logo);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
 }
-
+.stud::after{
+display: block;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom:-40px;
+    background-color: var(--color-logo);
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stud:hover::after{
+    opacity: 1;
+}
 /*site nav */
 .site-nav {
     display:flex;
@@ -171,27 +183,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), text-shadow ;
     line-height: 1.2;
     letter-spacing: 0.02em;
     
-}  
-.line-nav:after
-{
-    display: block;
-content: "";
-width: 48px;
-height: 4px;
-margin-left: auto;
-margin-right: auto;
-margin-top: 28px;
-background-color: var(--color-logo);
-position: absolute;
-opacity: 0;
-visibility: hidden;
-}  
-.line-nav:hover,
-.line-nav:focus{
-opacity: 1;
-visibility: hidden;
-}
-
+}   
 .conteiner-tel-mail{
     display: flex;
 margin-left: auto;
@@ -310,23 +302,29 @@ width: 100%;
 height: 100%;
 background-color:rgba(0, 0, 0, 0.2);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        
+    opacity: 1;  
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+    
 }
 .backdrope:hover::before{
 opacity: 1;
 }
-
+.backdrope.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.5);
+}
 .modal{
  position:absolute;
-     top: 40%;
+     top: 50%;
      left: 50%;
-     transform: translate(-50%, -50%);
+    
 
     min-height: 581px; 
     min-width: 528px;
     background-color: var(--bacground-font-waight);
-    
+ transform:translate(-50%, -50%) scale(1);   
+ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .button-close{
     display: flex;
     justify-content: center;
@@ -344,22 +342,8 @@ width: 30px;
     padding: 0;
     cursor: pointer;
 }
- /*   
-    position: absolute;
- width: 528px;
-        height: 581px;
 
-        top: 75%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-       
-        background-color: var(--bacground-font-waight);
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-        border-radius: 4px;
-        opacity: 1;
-        transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-*/
+
 /*=========================modal=============================*/
 /*============================section idea 2==============================================*/
 
@@ -679,9 +663,10 @@ background-color: var(--color-logo);
     color: var(--title-text-color);
     border: transparent;
     border-radius: 4px;
+    transition-property: background-color,color,filter;
+    transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-/*Не нашла в макете где искать их параметры border: transparent;
-border-radius: 4px; ??*/
 .button-menu-portfolio:hover,
 .button-menu-portfolio:focus {
     background-color: var(--color-logo);
@@ -766,16 +751,18 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1p
     overflow: auto;
 
         transform: translateY(100%);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        /*opacity: 0;
-        visibility:hidden;
-        pointer-events: none;*/
+
+    transition-property: transform, box-shadow;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.project-card-linc:hover.text-hidden
-.project-card-linc:focus.text-hidden{
-    transform: translateY(0%);
+.project-card-linc {
+transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-card-linc:hover .text-hidden,
+.project-card-linc:focus .text-hidden{
+    transform: translateY(0);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-/*opacity: 1;
-    visibility: visible;
-    pointer-events:auto;*/
 }
