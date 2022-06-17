@@ -421,37 +421,38 @@
     <!-- -------------------------modal------------ -->
     <div class="backdrope is-hidden" data-modal>
         <div class="modal">
-           <form action="" class="form-modal"> 
+           <form  class="form-modal"> 
     <p id="contact-details-head"> Оставьте свои данные, мы вам перезвоним</p>
            
-                <label for="name" class="lable-text">Имя</label>
-                <input type="text" name="name" id="name" class="input-text" autofocus required minlength="2" pattern="[а-яА-Я]*" title="Галина">
+                <label for="name" class="lable-text ">Имя</label>
+                <span class="cont-input">
+                <input type="text" name="name" id="name" class="input-text" autofocus minlength="2" pattern="[а-яА-Я]*" title="Галина">
                 <svg class="modal-icon-name m-i" width="12" height="12">
                     <use href="./images/sprite.svg#icon-name"></use>
-                </svg>
+                </svg></span>
 
                 <label for="tel" class="lable-text">Телефон</label>
-                <input type="tel" name="tel" id="tel" class="input-text" required pattern="[0-9]{10}" title="0660000000">
+                <span class="cont-input">
+                <input type="tel" name="tel" id="tel" class="input-text"  pattern="[0-9]{10}" title="0660000000">
                 <svg class="modal-icon-tel m-i " width="13" height="13">
                     <use href="./images/sprite.svg#icon-tel"></use>
-                </svg>
+                </svg></span>
 
                 <label for="email" class="lable-text">Почта</label>
-                <input type="email" name="email" id="email" class="input-text" required>
+                <span class="cont-input">
+                <input type="email" name="email" id="email" class="input-text">
             <svg class="modal-icon-emeil m-i" width="15" height="12">
                 <use href="./images/sprite.svg#icon-emeilll"></use>
-            </svg>
+            </svg></span>
 
-                <label for="feedback" name="" class="lable-text">Комментарий</label>
-<textarea name="feedback"  placeholder="Введите текст" class="input-text-texteria">
+                <label for="feedback" name="feetback" class="lable-text">Комментарий</label>
+<textarea name="feedback"  placeholder="Введите текст" id="feedback" class="input-text-texteria">
 </textarea>
                 </label>
-
-
-                <div class="form-group" role="group">
-                <input type="checkbox" name="checkbox" value="checkbox" id="checkbox" class="lable-checbox-deal" required>
-                <label for="checkbox" class="lable-checbox-deal link">Соглашаюсь с рассылкой и принимаю <a href="" class="checkbox-link "><span class="chekc-span-deal "> Условия договора</span></a></label>
-            </div>
+                <input type="checkbox" name="checkbox" value="checkbox" id="checkbox" class="input-checbox-deal visually-hidden" required>
+                <label for="checkbox" class="lable-checbox-deal">Соглашаюсь с рассылкой и принимаю &nbsp;<a href="" class="checkbox-link "><span class="chekc-span-deal "> Условия договора</span></a></label>
+              
+        
                 <button type="submit" class="button-submit-m">Отправить</button>
             </form>
             <button class="button-close" data-modal-close>
