@@ -421,8 +421,9 @@ text-decoration: underline var(--color-logo);
 .lable-checbox-deal{
 display: flex;
 align-items: center;
+justify-items: center;
 position: relative;
-padding-left: 13px;
+
 font-size: 14px;
         line-height:1.7;
         letter-spacing: 0.03em;
@@ -437,14 +438,15 @@ cursor: pointer;
 width:16px ;
 height: 15px;
 margin-right: 8px;
-border: 0.2px solid rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 4px;
 background-color: var(--bacground-font-waight);
 }
 .input-checbox-deal:checked + .lable-checbox-deal::before{
 background-color: var(--color-logo);
 border: 0.2px solid var(--color-logo);
-background-image: url(./images/iconcheck.svg);
-background-position: 50% 50%
+background-image: url(/images/iconcheck.svg);
+background-position: 50% 50%;
 }
 
 .form-modal{
@@ -749,11 +751,13 @@ fill: var(--color-logo);
 }
 .conteinerdop{
     display:flex;
-   align-items: baseline;
+   justify-content: space-between;
+   align-items: stretch;
+  
 }
 
 .ccc{
-    display: inline-block;
+    display: flex-grow=1;
     justify-content: left;
     
     margin-left: 70px;
