@@ -445,7 +445,7 @@ background-color: var(--bacground-font-waight);
 .input-checbox-deal:checked + .lable-checbox-deal::before{
 background-color: var(--color-logo);
 border: 0.2px solid var(--color-logo);
-background-image: url(/images/iconcheck.svg);
+background-image: url(./images/iconcheck.svg);
 background-position: 50% 50%;
 }
 
